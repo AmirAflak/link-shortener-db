@@ -87,4 +87,17 @@ def get_url(short_url: str) -> None:
 def get_list():
     pass
 
-
+# # if __name__ == '__main__':
+parser = argparse.ArgumentParser(description='URL shortener CLI')
+subparsers = parser.add_subparsers(title='subcommands')
+# create url
+create_parser = subparsers.add_parser('create', help='create a new short URL')
+create_parser.add_argument('seturl', type=str, help='short the URL')
+create_parser.set_defaults(func=lambda args: set_url(args.seturl))
+# get url
+get_parser = subparsers.add_parser('get', help='retrieve the original URL for a short URL')
+get_parser.add_argument('geturl', type=str, help='get original url from shorted url')
+get_parser.set_defaults(func=lambda args: get_url(args.short_url))
+# Parse arguments and execute command
+args = parser.parse_args()
+args.func(args)
