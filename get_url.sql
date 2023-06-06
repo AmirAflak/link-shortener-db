@@ -1,9 +1,8 @@
-CREATE FUNCTION get_url(@short_url CHAR(6))
-RETURNS VARCHAR(255)
+CREATE PROCEDURE get_url
+    @short_url CHAR(6),
+    @original_url VARCHAR(255) OUTPUT
 AS
 BEGIN
-    DECLARE @original_url VARCHAR(255)
-
     -- Check if short URL exists and retrieve original URL
     SELECT @original_url = original_url
     FROM urls
@@ -12,8 +11,7 @@ BEGIN
     -- Raise error if short URL does not exist
     IF @original_url IS NULL
     BEGIN
-        THROW 50001, 'Short URL not found', 1
+        RAISERROR('Short URL not found', 16, 1)
+        RETURN
     END
-
-    RETURN @original_url
 END
