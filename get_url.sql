@@ -3,15 +3,26 @@ CREATE PROCEDURE get_url
     @original_url VARCHAR(255) OUTPUT
 AS
 BEGIN
-    -- Check if short URL exists and retrieve original URL
-    SELECT @original_url = original_url
-    FROM urls
-    WHERE short_url = @short_url
+    SET NOCOUNT ON;
 
-    -- Raise error if short URL does not exist
-    IF @original_url IS NULL
+    -- Check if the original URL already exists in the table
+    IF EXISTS (SELECT 1 FROM urls WHERE short_url = @short_url)
+    BEGIN
+        -- Update the num_referrals and last_referenced_at columns
+        UPDATE urls
+        SET num_referrals = num_referrals + 1,
+            last_referenced_at = GETDATE()
+        WHERE short_url = @short_url;
+
+        -- Get the corresponding short URL
+        SELECT @original_url = original_url
+        FROM urls
+        WHERE short_url = @short_url;
+    END
+    ELSE
     BEGIN
         RAISERROR('Short URL not found', 16, 1)
-        RETURN
+		RETURN
     END
 END
+
