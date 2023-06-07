@@ -27,19 +27,7 @@ conn = pyodbc.connect(f'Driver={driver};'
 cursor = conn.cursor()
 def create_table() -> None:
     cursor.execute("""\
-        IF OBJECT_ID('urls', 'U') IS NOT NULL
-        BEGIN
-            DROP TABLE urls
-        END;
-
-        create table urls(
-        short_url char(6) primary key,
-        original_url varchar(255), 
-        num_referrals int,
-        created_at datetime,
-        last_referenced_at datetime,
-        expires_at datetime
-    );
+        EXEC create_urls_table;
     """)
     cursor.commit()
     # cursor.execute("select * from urls")
