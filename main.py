@@ -72,7 +72,14 @@ def get_url(short_url: str) -> None:
 
     print(f"original url:  {cursor.fetchone()[0]}")
     
-
+def get_list() -> None:
+    # cursor.execute("""\
+    #     SELECT * FROM URLS
+    # """)
+    df=pd.read_sql_query("SELECT * FROM URLS;", conn)
+    print(df)
+    # for row in cursor.fetchall():
+    #     print(row)
 
 
     
@@ -86,8 +93,8 @@ def get_url(short_url: str) -> None:
 
 
 
-def get_list():
-    pass
+
+    
 
 # # if __name__ == '__main__':
 parser = argparse.ArgumentParser(description='URL shortener CLI')
@@ -95,7 +102,6 @@ subparsers = parser.add_subparsers(title='subcommands')
 
 # create table
 create_parser = subparsers.add_parser('init', help='create a new  table')
-# create_parser.add_argument('', type=str, help='short the URL')
 create_parser.set_defaults(func=lambda args: create_table())
 
 # create url
@@ -106,6 +112,9 @@ create_parser.set_defaults(func=lambda args: set_url(args.seturl))
 get_parser = subparsers.add_parser('get', help='retrieve the original URL for a short URL')
 get_parser.add_argument('geturl', type=str, help='get original url from shorted url')
 get_parser.set_defaults(func=lambda args: get_url(args.geturl))
+# list table
+create_parser = subparsers.add_parser('list', help='get active urls')
+create_parser.set_defaults(func=lambda args: get_list())
 # Parse arguments and execute command
 args = parser.parse_args()
 args.func(args)
