@@ -3,6 +3,9 @@ import pyodbc
 import pandas as pd
 import argparse
 from time import sleep
+import warnings
+
+warnings.filterwarnings('ignore')
 
 server="LAPTOP-Q8CKU4E0"
 database="url_db" 
