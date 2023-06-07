@@ -2,8 +2,7 @@
 import pyodbc
 import pandas as pd
 import argparse
-import time
-
+from time import sleep
 
 server="LAPTOP-Q8CKU4E0"
 database="url_db" 
@@ -39,8 +38,8 @@ def create_table() -> None:
         expires_at datetime
     );
     """)
-    cursor.execute("select * from urls")
     cursor.commit()
+    # cursor.execute("select * from urls")
 
 
 def set_url(original_url: str) -> None:
@@ -49,13 +48,14 @@ def set_url(original_url: str) -> None:
         DECLARE @short_url CHAR(6);
         EXECUTE set_url @original_url, @short_url OUTPUT;
     """, original_url)
+    cursor.commit()
 
     cursor.execute("""\
         SELECT short_url FROM URLS WHERE original_url = ?
     """, original_url)
-    cursor.commit()
 
     print(f"shorted url:  {cursor.fetchone()[0]}")
+   
 
 def get_url(short_url: str) -> None:
     cursor.execute("""\
@@ -63,13 +63,15 @@ def get_url(short_url: str) -> None:
         EXEC get_url ?, @result OUTPUT
         SELECT @result
     """, short_url)
+    cursor.commit()
 
     cursor.execute("""\
         SELECT original_url FROM URLS WHERE short_url = ?
     """, short_url)
-    cursor.commit()
+    
 
     print(f"original url:  {cursor.fetchone()[0]}")
+    
 
 
 
@@ -90,6 +92,12 @@ def get_list():
 # # if __name__ == '__main__':
 parser = argparse.ArgumentParser(description='URL shortener CLI')
 subparsers = parser.add_subparsers(title='subcommands')
+
+# create table
+create_parser = subparsers.add_parser('init', help='create a new  table')
+# create_parser.add_argument('', type=str, help='short the URL')
+create_parser.set_defaults(func=lambda args: create_table())
+
 # create url
 create_parser = subparsers.add_parser('create', help='create a new short URL')
 create_parser.add_argument('seturl', type=str, help='short the URL')
@@ -97,7 +105,7 @@ create_parser.set_defaults(func=lambda args: set_url(args.seturl))
 # get url
 get_parser = subparsers.add_parser('get', help='retrieve the original URL for a short URL')
 get_parser.add_argument('geturl', type=str, help='get original url from shorted url')
-get_parser.set_defaults(func=lambda args: get_url(args.short_url))
+get_parser.set_defaults(func=lambda args: get_url(args.geturl))
 # Parse arguments and execute command
 args = parser.parse_args()
 args.func(args)
