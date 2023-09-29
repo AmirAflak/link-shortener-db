@@ -1,0 +1,1088 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.20.0221.0754                               -->
+<workbook original-version='18.1' source-build='2019.4.4 (20194.20.0221.0754)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <ISO8601PeriodTypes predowngraded='true' />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <ParameterAction ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='urls (url_db)' inline='true' name='federated.0w1t8311s72mzn1ewr4eq1ljt0as' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='LAPTOP-Q8CKU4E0' name='sqlserver.16tr2yc1ty1r8e17ooyfo00dg2hq'>
+            <connection authentication='sspi' class='sqlserver' dbname='url_db' odbc-native-protocol='yes' one-time-sql='' port='0' server='LAPTOP-Q8CKU4E0' />
+          </named-connection>
+        </named-connections>
+        <relation connection='sqlserver.16tr2yc1ty1r8e17ooyfo00dg2hq' name='urls' table='[dbo].[urls]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>short_url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[short_url]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>short_url</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>6</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>original_url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[original_url]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>original_url</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_referrals</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[num_referrals]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>num_referrals</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_at</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[created_at]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>created_at</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_referenced_at</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[last_referenced_at]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>last_referenced_at</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expires_at</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[expires_at]</local-name>
+            <parent-name>[urls]</parent-name>
+            <remote-alias>expires_at</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='تاریخ ساخت' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
+      <column caption='تاریخ انقضا' datatype='datetime' name='[expires_at]' role='dimension' type='ordinal' />
+      <column caption='تاریخ آخرین ارجاع' datatype='datetime' name='[last_referenced_at]' role='dimension' type='ordinal' />
+      <column caption='تعداد ارجاع' datatype='integer' name='[num_referrals]' role='measure' type='quantitative' />
+      <column caption='لینک اصلی' datatype='string' name='[original_url]' role='dimension' type='nominal' />
+      <column caption='لینک کوتاه' datatype='string' name='[short_url]' role='dimension' type='nominal' />
+      <extract count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/MEHDI/Documents/My Tableau Repository/Datasources/urls (url_db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='06/18/2023 04:04:45 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='urls (url_db)' increment-value='%null%' refresh-type='create' rows-inserted='8' timestamp-start='2023-06-18 16:04:45.074' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>short_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[short_url]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>short_url</remote-alias>
+              <ordinal>0</ordinal>
+              <family>urls</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>original_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[original_url]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>original_url</remote-alias>
+              <ordinal>1</ordinal>
+              <family>urls</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>num_referrals</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[num_referrals]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>num_referrals</remote-alias>
+              <ordinal>2</ordinal>
+              <family>urls</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>created_at</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[created_at]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>created_at</remote-alias>
+              <ordinal>3</ordinal>
+              <family>urls</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>last_referenced_at</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[last_referenced_at]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>last_referenced_at</remote-alias>
+              <ordinal>4</ordinal>
+              <family>urls</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expires_at</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[expires_at]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>expires_at</remote-alias>
+              <ordinal>5</ordinal>
+              <family>urls</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.519149' measure-ordering='alphabetic' measure-percentage='0.480851' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <actions>
+    <edit-parameter-action caption='Parameter1' name='[Action1]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Sheet 5' />
+      <agg-type type='attr' />
+      <params>
+        <param name='source-field' value='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:Calculation_1637339978025304066:qk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 1]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7' fontname='IRANSans'>پر ارجاع ترین لینک های امروز</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='urls (url_db)' name='federated.0w1t8311s72mzn1ewr4eq1ljt0as' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0w1t8311s72mzn1ewr4eq1ljt0as'>
+            <column caption='تاریخ آخرین ارجاع' datatype='datetime' name='[last_referenced_at]' role='dimension' type='ordinal' />
+            <column-instance column='[last_referenced_at]' derivation='None' name='[none:last_referenced_at:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[original_url]' derivation='None' name='[none:original_url:nk]' pivot='key' type='nominal' />
+            <column caption='تعداد ارجاع' datatype='integer' name='[num_referrals]' role='measure' type='quantitative' />
+            <column caption='لینک اصلی' datatype='string' name='[original_url]' role='dimension' type='nominal' />
+            <column-instance column='[num_referrals]' derivation='Sum' name='[sum:num_referrals:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='relative-date' column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type='day' period-type-v2='day' />
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' scope='cols' value='تعداد ارجاع' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-family' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='IRANSans' />
+            <format attr='font-family' data-class='subtotal' scope='rows' value='IRANSans' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='212' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='IRANSans' />
+            <format attr='font-family' scope='rows' value='IRANSans' />
+            <format attr='font-family' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' value='IRANSans' />
+            <format attr='font-weight' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='bold' />
+            <format attr='color' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='#499894' />
+            <format attr='font-size' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='12' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='1' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'> لینک:</run>
+                <run bold='true' fontalignment='1' fontcolor='#787878' fontname='IRANSans' fontsize='12'>Æ </run>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>&lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]&gt;</run>
+                <run bold='true' fontalignment='1' fontcolor='#787878' fontname='IRANSans' fontsize='12'>Æ&#9;</run>
+                <run fontalignment='1'>Æ&#10;</run>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>تعداد ارجاع: &lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]</rows>
+        <cols>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]</cols>
+      </table>
+      <simple-id uuid='{FFDEA682-210A-4F13-A9DE-9CFE1AAEE656}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#76b7b2' fontname='IRANSans' fontsize='18'>تعداد لینک های جدید هر روز</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='urls (url_db)' name='federated.0w1t8311s72mzn1ewr4eq1ljt0as' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0w1t8311s72mzn1ewr4eq1ljt0as'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='تاریخ ساخت' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[created_at]' derivation='Day-Trunc' name='[tdy:created_at:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:created_at:qk]' palette='green_blue_white_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:created_at:qk]' />
+              <wedge-size column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:Number of Records:qk]' />
+              <size column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:Number of Records:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>تاریخ ساخت: &lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:created_at:qk]&gt;</run>
+                <run fontalignment='1'>Æ&#10;</run>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>تعداد: &lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:Number of Records:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8494579D-94E3-42E9-9F3A-07AB8F2A782D}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#e15759' fontname='IRANSans' fontsize='18'>تعداد ارجاع های هر روز</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='urls (url_db)' name='federated.0w1t8311s72mzn1ewr4eq1ljt0as' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0w1t8311s72mzn1ewr4eq1ljt0as'>
+            <column caption='تاریخ آخرین ارجاع' datatype='datetime' name='[last_referenced_at]' role='dimension' type='ordinal' />
+            <column caption='تعداد ارجاع' datatype='integer' name='[num_referrals]' role='measure' type='quantitative' />
+            <column-instance column='[num_referrals]' derivation='Sum' name='[sum:num_referrals:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[last_referenced_at]' derivation='Day-Trunc' name='[tdy:last_referenced_at:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:last_referenced_at:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:last_referenced_at:qk]' />
+              <wedge-size column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' />
+              <size column='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>تاریخ آخرین ارجاع: &lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:last_referenced_at:qk]&gt;</run>
+                <run fontalignment='1'>Æ&#10;</run>
+                <run bold='true' fontalignment='1' fontname='IRANSans' fontsize='12'>تعداد ارجاع: &lt;[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{0660E509-741D-434F-817B-B3155D915E9B}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ba9582' fontname='IRANSans'>وضعیت کلی لینک ها</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='urls (url_db)' name='federated.0w1t8311s72mzn1ewr4eq1ljt0as' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0w1t8311s72mzn1ewr4eq1ljt0as'>
+            <column caption='تاریخ ساخت' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
+            <column caption='تاریخ انقضا' datatype='datetime' name='[expires_at]' role='dimension' type='ordinal' />
+            <column caption='تاریخ آخرین ارجاع' datatype='datetime' name='[last_referenced_at]' role='dimension' type='ordinal' />
+            <column-instance column='[created_at]' derivation='None' name='[none:created_at:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[expires_at]' derivation='None' name='[none:expires_at:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[last_referenced_at]' derivation='None' name='[none:last_referenced_at:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[original_url]' derivation='None' name='[none:original_url:nk]' pivot='key' type='nominal' />
+            <column-instance column='[short_url]' derivation='None' name='[none:short_url:nk]' pivot='key' type='nominal' />
+            <column caption='تعداد ارجاع' datatype='integer' name='[num_referrals]' role='measure' type='quantitative' />
+            <column caption='لینک اصلی' datatype='string' name='[original_url]' role='dimension' type='nominal' />
+            <column caption='لینک کوتاه' datatype='string' name='[short_url]' role='dimension' type='nominal' />
+            <column-instance column='[num_referrals]' derivation='Sum' name='[sum:num_referrals:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' direction='DESC' measure-to-sort-by='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:ok]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-family' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='IRANSans' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='196' />
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:short_url:nk]' value='180' />
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:ok]' value='304' />
+            <format attr='height-header' value='70' />
+            <format attr='text-align' data-class='total' value='center' />
+            <format attr='vertical-align' data-class='total' value='center' />
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:ok]' value='212' />
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:expires_at:ok]' value='236' />
+            <format attr='width' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:created_at:ok]' value='288' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-family' value='IRANSans' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]' value='IRANSans' />
+            <format attr='font-family' scope='cols' value='IRANSans' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='IRANSans' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk] / ([federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:short_url:nk] / ([federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:created_at:ok] / ([federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:ok] / ([federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:expires_at:ok] / [federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:ok])))))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B7E7DCCC-F785-468A-8CC2-A3E2C9A54C3E}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1474862E-D618-4F01-B14B-7D53766D61F3}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#59a14f' fontname='IRANSans' fontsize='22' underline='true'>داشبورد کوتاه کننده لینک</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98804' id='37' param='vert' type='layout-flow' w='99290' x='355' y='598'>
+            <zone h='98804' id='35' param='vert' type='layout-flow' w='99290' x='355' y='598'>
+              <zone h='98804' id='6' param='horz' type='layout-flow' w='99290' x='355' y='598'>
+                <zone h='98804' id='4' type='layout-basic' w='99290' x='355' y='598'>
+                  <zone h='49402' id='1' name='Sheet 4' w='56414' x='355' y='598'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='49402' id='3' name='Sheet 1' w='42876' x='56769' y='598'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='49402' id='8' name='Sheet 2' w='51132' x='355' y='50000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='49402' id='11' name='Sheet 3' w='48158' x='51487' y='50000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#59a14f' fontname='IRANSans' fontsize='22' underline='true'>داشبورد کوتاه کننده لینک</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1200' minheight='1200' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='59' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98804' id='58' param='vert' type='layout-flow' w='99290' x='355' y='598'>
+                <zone fixed-size='280' h='49402' id='1' is-fixed='true' name='Sheet 4' w='56414' x='355' y='598'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49402' id='3' is-fixed='true' name='Sheet 1' w='42876' x='56769' y='598'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49402' id='8' is-fixed='true' name='Sheet 2' w='51132' x='355' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49402' id='11' is-fixed='true' name='Sheet 3' w='48158' x='51487' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{4081EC2E-444B-4272-89E1-5551C49DA110}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='124'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[dy:created_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:qk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8A957AD6-1445-4F0F-BA07-258F7A537C8A}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:created_at:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:Number of Records:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:created_at:qk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:created_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:expires_at:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6FEA05AD-6557-46E1-8490-1612AB051E87}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:last_referenced_at:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:last_referenced_at:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8C50181D-084A-4132-AB33-AB3049095B7D}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:short_url:nk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tdy:expires_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tyr:created_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tyr:expires_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[tyr:last_referenced_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:created_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:expires_at:ok]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:last_referenced_at:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BB3B2255-146B-4DE7-839F-6482F29D9FE7}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:Calculation_1637339978026905604:nk]</field>
+            <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[yr:Calculation_1637339978025304066:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{344C794B-AB53-4248-9C59-26F266D7215F}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[dy:created_at:ok]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Sheet 3'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[sum:num_referrals:qk]' type='size'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Sheet 4'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <node-selection select-tuples='false'>
+              <oriented-node-reference orientation='vertical'>
+                <node-reference>
+                  <fields>
+                    <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:original_url:nk]</field>
+                    <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:short_url:nk]</field>
+                    <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:created_at:ok]</field>
+                    <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:last_referenced_at:ok]</field>
+                    <field>[federated.0w1t8311s72mzn1ewr4eq1ljt0as].[none:expires_at:ok]</field>
+                  </fields>
+                  <multibucket>
+                    <bucket>&quot;yahoo.com&quot;</bucket>
+                    <bucket>&quot;a5bba1&quot;</bucket>
+                    <bucket>#2023-06-10 23:36:21.927#</bucket>
+                    <bucket>%null%</bucket>
+                    <bucket>#2023-06-17 23:36:21.927#</bucket>
+                  </multibucket>
+                </node-reference>
+                <page-reference />
+              </oriented-node-reference>
+            </node-selection>
+          </selection-collection>
+        </viewpoint>
+      </viewpoints>
+      <active id='11' />
+      <simple-id uuid='{71AD19CE-1350-4A9A-AC31-A3A730A8B173}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      TkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 5' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
