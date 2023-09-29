@@ -1,8 +1,6 @@
-#from sqlalchemy import create_engine
 import pyodbc
 import pandas as pd
 import argparse
-from time import sleep
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -16,21 +14,12 @@ conn = pyodbc.connect(f'Driver={driver};'
                       f'Database={database};'
                       'Trusted_Connection=yes;')
 
-# Database_Con = f"mssql://@{server}/{database}?driver={driver}"
-
-# engine = create_engine(Database_Con)
-# con = engine.connect()
-# con.execute("SELECT * FROM urls")
-# df=pd.read_sql_query("SELECT * FROM urls;", con)
-# print(df)
-
 cursor = conn.cursor()
 def create_table() -> None:
     cursor.execute("""\
         EXEC create_urls_table;
     """)
     cursor.commit()
-    # cursor.execute("select * from urls")
 
 
 def set_url(original_url: str) -> None:
@@ -64,22 +53,8 @@ def get_url(short_url: str) -> None:
     print(f"original url:  {cursor.fetchone()[0]}")
     
 def get_list() -> None:
-    # cursor.execute("""\
-    #     SELECT * FROM URLS
-    # """)
     df=pd.read_sql_query("SELECT * FROM URLS;", conn)
     print(df)
-    # for row in cursor.fetchall():
-    #     print(row)
-
-
-    
-
-# create_table()
-# time.sleep(3)
-# set_url("www.google.com")
-
-# cursor.commit()
 
 
 
